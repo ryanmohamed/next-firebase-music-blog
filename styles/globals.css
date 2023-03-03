@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;1,300&family=Darker+Grotesque&family=Indie+Flower&family=Questrial&family=Staatliches&display=swap');
+html {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ :root {
+    --body-bg: #FFFBFC;
+    --bg: #1C2222;
+    --bg-accent: #F8F9FA;
+    --bg-accent2: #86d15c;
+    --bg-accent3: #43B929;
+    --text-color: #c6d3d3;
+    --nav-size: 60px;
+    border: none;
+    --border-radius: 8px;
+    --speed: 500ms;
+}
+
+.svg-bg {
+    resize: both;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    transition: background-color 300ms;
+}
+
+.chat-room {
+    height: calc(100vh - var(--nav-size)) !important;
+    background-image: url('/sidewaves.svg');
+    background-color: var(--bg);
+    color: #ffffff;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.chat-room h1{
+    font-family: 'Chakra Petch', sans-serif;
+    color: var(--text-color);
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatroom-field {
+    position: relative;
+    padding: 0 10% 5% 10%;
+    height: 80vh;
+    width: 100%;
+    /* overflow-y: scroll; */
+    align-self: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chatroom-field .active-users{
+    height: 50px;
+    background-color: #1C2222;
+    position: absolute;
+}
+
+.chatroom-field main {
+    overflow-y: scroll;
+    background-color: rgba(28, 34, 34, 0.5);
+    border-top-left-radius: 8px;
+    
+    height: 100%;
+    padding: 10px 25px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+main::-webkit-scrollbar {
+    border-top-right-radius: 8px;
+    width: 0.25rem;
+  }
+  
+main::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #86d15c;
+}
+
+.chatroom-field form {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatroom-field form input[type=text]{
+    background-color: rgba(28, 34, 34, 0.6);
+    border-bottom-left-radius: 8px;
+    color: white;
+    padding: 0 10px;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.chatroom-field form input[type=text]:focus{
+    outline: none;
+
+}
+
+.chatroom-field form input[type=submit]{
+    background-color: #43B929;
+    border-bottom-right-radius: 8px;
+    height: 100%;
+    width: 70px;
+    color: rgb(114, 114, 114);
+    border: none;
+    transition: 300ms ease-out;
+}
+
+.chatroom-field form input[type=submit]:hover{
+    background-color: #86d15c;
+    cursor: pointer;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+}
+.message img{
+    height: 2rem;
+    border-radius: 50%;
+}
+.message p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    border-radius: 8px;
+}
+.sent {
+    flex-direction: row-reverse;
+}
+.sent p {
+    font-style: italic;
+    color: #1C2222;
+    background: var(--bg-accent2);
+    align-self: flex-end;
+    margin-right: 10px;
+}
+.received p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #9CAFB7;
+    font-style: italic;
+    color: rgb(51, 51, 51);
+    margin-left: 10px;
+}
+
+/* .chat-landing {
+    height: 100%;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 3fr 1fr; */
+
+
+/* .chat-landing h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+} */
+
+.music-search {
+    padding: 0 5%;
+    min-height: calc(100vh - var(--nav-size)) !important;
+    background-image: url('/greenwaves.svg');
+    background-color: var(--bg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Questrial', sans-serif;
+    color: var(--text-color);
+}
+
+.music-search h1 {
+    margin-top: 75px;
+    margin-bottom: 20px;
+}
+
+.music-search input {
+    border: none;
+    border-bottom: 2px solid var(--text-color);;
+    color: var(--text-color);
+    background: transparent !important;
+    text-align: right;
+    margin-bottom: 15px;
+    padding: 0 5%;
+    width: 400px;
+    height: 50px;
+}
+
+.music-search input:focus {
+    background: none;
+    outline: none;
+}
+
+.music-search input:-webkit-autofill {
+    background: none;
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.button {
+    margin-top: 15px;
+    width: 400px;
+    height: 50px;
+    background-color: #86d15c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+}
+
+.button:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.lyrics {
+    border-radius: 16px;
+    margin: 50px 0;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 300ms;
+}
+
+
+.lyrics .heading{
+    max-height: 200px;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lyrics .heading button {
+    background-color: #3BC14A;
+    transition: filter 300ms;
+    border: none;
+    align-self: flex-end;
+    height: 25px;
+    width: 25px;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lyrics .heading button:hover{
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.lyrics .heading .title {
+    height: 30%;
+    width: 100%;
+    font-style: italic;
+    /* background-color: red; */
+}
+.lyrics .heading .title h1{
+    color:rgb(185, 185, 185)
+}
+    
+.lyrics .heading .title h1, h2{
+    margin: 0;
+    text-align: left;
+}
+
+.lyrics p{
+    margin: 0;
+    margin-top: 10%;
+    white-space: pre-line;
+    line-height: 1.3rem;
+    text-align: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar {
+    z-index: 3;
+    height: var(--nav-size);
+    background-color: var(--bg);
+    padding: 0 1rem;
+    border-bottom: var(--border);
+    transition: 300ms;
+}
+
+.navbar-nav {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    /* nav item is a box smaller than the nav itself! */
+    width: calc(var(--nav-size) * 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    /* need button to be half of nav bar size */
+    --button-size: calc(var(--nav-size) * 0.5);
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    background-color: var(--bg-accent2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 2px;
+    transition: 200ms ease-out;
+}
+
+.nav-item .icon-button img {
+    height: calc(50px * 0.8);
+    border-radius: 50%;
+}
+
+.nav-item > .icon-button:hover {
+    /* chrome bug */
+    /* filter: brightness(1.2); */
+    background-color: var(--bg-accent3);
+}
+
+.dropdown {
+    font-family: 'Questrial', sans-serif;
+    z-index: 2;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 300px;
+    /* transform: translateX(-35%); */
+    background-color: var(--bg);
+    border: var(--border);
+    border-bottom-left-radius: var(--border-radius);
+    padding: 1rem;
+    transition: height var(--speed) ease;
+    transition: background-color 300ms;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    font-family: 'Questrial', sans-serif;
+    font-style: italic;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: background var(--speed);
+    padding: 0.5rem;
+    color: var(--text-color)
+}
+
+.menu-item .icon-button {
+    margin-right: 0.5rem;
+}
+
+.menu-item .icon-button svg {
+    height: 20px;
+    position: absolute;
+}
+
+.menu-item .icon-button img {
+    height: calc(50px * 0.8);
+    border-radius: 50%;
+}
+
+.menu-item .icon-right {
+    margin-left: auto;
+}
+
+.menu-item .icon-right svg {
+    height: 20px;
+}
+
+.right-caret {
+    transform: rotate(180deg);
+}
+
+.menu-item .icon-button:hover{
+    background-color: var(--bg-accent2);;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-accent3);
+}
+
+.caret {
+    width: 20px;
+    height: 20px;
+}
+
+.heading {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--body-bg);
+    position: relative;
+}
+
+canvas {
+    transition: background-color 300ms;
+    background-color: var(--bg);
+    height: calc(100vh - var(--nav-size));
+}
+
+.home {
+    z-index: 2;
+    background-color: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+    transition: opacity 800ms;
+}
+
